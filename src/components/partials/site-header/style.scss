@@ -1,0 +1,11 @@
+@import '../../../scss/_config/all';
+
+.site-header {
+  background: var(--clrBackgroundHeader);
+  color: var(--clr_weiss);
+
+  .inner {
+    padding: 2rem;
+    @extend %central_column;
+  }
+}

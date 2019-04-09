@@ -1,0 +1,23 @@
+@import "../../../scss/_config/all.scss";
+@import "../../../scss/components.scss";
+
+.site-footer {
+  font-family: $font_face-utility;
+  font-size: $font_size-sml;
+  color: var(--clrFontArticle);
+  background: var(--clrBackgroundLight);
+
+  .inner {
+    padding: 4rem 2rem;
+    @extend %central_column;
+  }
+
+  address {
+    display: inline;
+    font-style: normal;
+  }
+
+  a {
+    @extend %copy_link;
+  }
+}

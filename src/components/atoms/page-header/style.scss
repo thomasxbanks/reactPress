@@ -1,0 +1,9 @@
+@import '../../../scss/_config/all';
+
+.page_header {
+
+  .heading {
+    @extend %page_header;
+    color: var(--clrFontArticle);
+  }
+}

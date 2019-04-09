@@ -1,0 +1,67 @@
+@import '../../../scss/_config/all';
+@import '../../../scss/components';
+
+.tease_container {
+  @extend %central_column;
+
+  .inner_grid {
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+  }
+}
+
+.tease {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem;
+  @extend %card;
+  @extend %card_size;
+
+
+  img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+
+}
+
+.tease header {
+  padding: 2rem 1rem 1rem 1rem;
+
+  .title {
+    font-family: $font_face-accent;
+    font-size: $font_size-xlg;
+    font-weight: $font_weight-bold;
+    color: var(--clrFontArticle);
+  }
+}
+
+.tease .content {
+  padding: 1rem;
+  font-family: $font_face-main;
+  font-size: $font_size-std;
+  line-height: $line_height;
+  color: var(--clrFontArticle);
+}
+
+.tease .read-more {
+  margin-top: auto;
+  margin-left: 1rem;
+  padding-top: 2rem;
+  color: var(--clrFontArticle);
+}
+
+.tease footer {
+  padding: 1rem;
+  margin-top: 1rem;
+  background: var(--clrBackgroundLight);
+}

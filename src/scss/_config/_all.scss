@@ -1,0 +1,69 @@
+$line_height: 1.66em;
+
+@import 'fonts';
+@import 'copy';
+@import 'layout';
+
+:root {
+  --clr_raja: #560560; // tyrian - brand purple
+  --clr_tatiana: #f800a6; // hollywood - brand pink
+  --clr_alaska: #dd4400; // sinopia - brand orange
+  --clr_nightshift: #080F0F; // nightshift (fogra29)
+  --clr_mineshaft: #161619; // mineshaft (eerie)
+  --clr_arsenic: #3F4045; // arsenic
+  --clr_azureish: #E3E8EE; // azureish
+  --clr_alabaster: #F5F4Fa; // alabaster
+  --clr_weiss: #FFFAFF; // weiss
+  --clr_brand-gradient: linear-gradient(45deg, var(--clr_raja), var(--clr_tatiana), var(--clr_alaska));
+}
+
+%light-mode {
+  --clrBackgroundPage: var(--clr_azureish);
+  --clrBackgroundArticle: var(--clr_weiss);
+  --clrBackgroundLight: var(--clr_alabaster);
+  --clrFontArticle: var(--clr_mineshaft);
+  --clrFontAlternate: var(--clr_arsenic);
+  --clrBackgroundHeader: var(--clr_nightshift);
+  --clrLinkBase: var(--clr_raja);
+  --clrLinkHover: var(--clr_alaska);
+
+}
+
+%dark-mode {
+  --clrBackgroundPage: var(--clr_nightshift);
+  --clrBackgroundArticle: var(--clr_mineshaft);
+  --clrBackgroundLight: var(--clr_bouler);
+  --clrFontArticle: var(--clr_alabaster);
+  --clrFontAlternate: var(--clr_azureish);
+  --clrLinkBase: var(--clr_alaska);
+  --clrLinkHover: var(--clr_tatiana);
+
+  img {
+    filter: grayscale(100%) !important;
+  }
+}
+
+html {
+  @extend %light-mode;
+}
+
+html[data-dark="true"] {
+  @extend %dark-mode;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    // @extend %dark-mode;
+    --clrBackgroundPage: var(--clr_nightshift);
+    --clrBackgroundArticle: var(--clr_mineshaft);
+    --clrBackgroundLight: var(--clr_bouler);
+    --clrFontArticle: var(--clr_alabaster);
+    --clrFontAlternate: var(--clr_azureish);
+    --clrLinkBase: var(--clr_alaska);
+    --clrLinkHover: var(--clr_tatiana);
+
+    img {
+      filter: grayscale(100%) !important;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../../scss/_config/all';
+
+.read-more {
+  @extend %page_header;
+  display: inline-block;
+  max-width: 10rem;
+  font-size: $font_size-std;
+  font-weight: $font_weight-bold;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:before {
+    transition: ease-out 300ms;
+    width: 50%;
+    transform: translateX(-100%);
+  }
+
+  &:hover:before {
+    transform: none;
+  }
+
+}

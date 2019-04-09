@@ -1,0 +1,129 @@
+// Layout
+html {
+  -ms-text-size-adjust: 100%; // Prevents font resizing on Internet Explorer
+  -webkit-text-size-adjust: 100%; // Prevents font resizing on Chrome and Safari
+  box-sizing: border-box; // Forces padding to be considered part of the width of an element
+  overflow-x: hidden; // Prevent side-scroll
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit; // Allows box-sizing to be overridden by a specific element with less conflict in specificity
+    -webkit-font-smoothing: antialiased; // Cleans up font appearance on Chrome and Safari
+    -moz-osx-font-smoothing: grayscale; // Cleans up font appearance on Firefox
+    text-rendering: optimizeLegibility; // Sorts out font styling
+    font-feature-settings: "kern"1; // Sorts out font styling
+  }
+}
+
+body {
+  margin: 0; // Remove browser applied margins
+  overflow-x: hidden; // Prevent side-scroll
+
+  @supports (scroll-behavior: smooth) {
+    scroll-behavior: smooth; // Progressive enhancement. Animates scroll to anchor without JavaScript
+  }
+}
+
+main,
+section {
+  display: block; // To fix IE not understanding these "new" tags
+}
+
+// Normalise the typography settings across the site
+// Style the highlight selection of web copy
+::selection {
+  color: white;
+  background: black;
+}
+
+// Reset headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+// Default bold settings
+b,
+strong {
+  font-weight: bold;
+}
+
+// Default italic settings
+i,
+em {
+  font-style: italic;
+}
+
+p {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+// Superscript and Subscript alignment
+// Fixes Chrome extending line-height to accomodate sub/sup text
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 0.75em;
+}
+
+sup {
+  top: -0.4em;
+}
+
+sub {
+  bottom: -0.4em;
+}
+
+// Default monospace font stack for code blocks
+pre,
+code {
+  font-family: "Operator Mono", "Dank Mono", "Fira Code", "Fira Mono", monospace;
+}
+
+// Buttons
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+// Forms
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Images
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  object-fit: cover;
+}
+
+dialog {
+  display: block;
+}
+
+blockquote {
+  margin: 0;
+}

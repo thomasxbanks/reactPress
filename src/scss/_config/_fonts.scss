@@ -1,0 +1,57 @@
+$baseline: 1rem !default;
+// Font sizes
+$font_size-sml: ($baseline * 0.8);
+$font_size-std: ($baseline * 1);
+$font_size-med: ($baseline * 1.33);
+$font_size-lrg: ($baseline * 1.5);
+$font_size-xlg: ($baseline * 2);
+$font_size-xxl: ($baseline * 3);
+$font_size-xxx: ($baseline * 4);
+
+$font_name: 'Quicksand';
+$font_weight-normal: 300;
+$font_weight-bold: 400;
+$font_weight-black: 700;
+$google_url: "https://fonts.googleapis.com/css?family="+$font_name+':'+$font_weight-normal+','+$font_weight-bold+','+$font_weight-black;
+// Face Stack/Family
+@import url($google_url);
+
+// The fallback font stack includes OS specific fonts followed by Emoji rendering fonts.
+$fallback: -apple-system,
+// is San Francisco, used on iOS and macOS (not Chrome however)
+BlinkMacSystemFont,
+// is San Francisco, used on macOS Chrome
+"Segoe UI",
+// is used on Windows 10
+Roboto,
+// is used on Android
+"Oxygen-sans",
+// is used on GNU+Linux
+Ubuntu,
+// is used on Linux
+"Helvetica Neue",
+// is used on macOS 10.10 and below
+Helvetica,
+// is used on macOS 10.10 and below
+Arial,
+// is a font widely supported by all operating systems
+sans-serif,
+// is the fallback sans-serif font if none of the other fonts are supported
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+
+$font_face-main: $fallback;
+$font_face-accent: $font_name,
+$fallback;
+$font_face-utility: $fallback;
+$font_face-code: "Operator Mono",
+"Dank Mono",
+"Fira Code",
+"SF Mono",
+"Source Code Pro",
+Inconsolata,
+"DejaVu Sans Mono",
+"Droid Sans Mono",
+"Ubuntu Mono",
+monospace;

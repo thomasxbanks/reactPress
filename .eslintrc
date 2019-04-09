@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-unresolved": [0],
+    "no-bitwise": [0],
+    "no-plusplus": [0],
+    "no-console": [0],
+    "no-param-reassign": [0],
+    "no-underscore-dangle": [0],
+    "react/no-this-in-sfc": [0],
+    "react/prop-types": [0],
+    "react/jsx-filename-extension": [0],
+    "react/no-did-update-set-state": [0],
+    "linebreak-style": "off",
+    "max-len": [1, 140, 2, {
+      "ignoreComments": true
+    }],
+    "jsx-a11y/label-has-for": [0]
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  }
+}

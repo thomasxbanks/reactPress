@@ -1,0 +1,16 @@
+%central_column {
+  display: block;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%content_column {
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  @media screen and (min-width: 45rem) {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}

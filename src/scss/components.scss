@@ -1,0 +1,75 @@
+@import '_config/all.scss';
+@import 'atoms/all.scss';
+@import 'molecules/all.scss';
+@import 'organisms/all.scss';
+@import 'templates/all.scss';
+@import 'pages/all.scss';
+
+%card {
+  background: var(--clrBackgroundArticle);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.15);
+}
+
+%card_size {
+  width: calc(100% - 2rem);
+
+  &:first-of-type {
+    width: calc(100% - 2rem);
+  }
+
+  @media screen and (min-width: 18.75rem) {
+    min-width: calc(18.75rem - 2rem);
+    width: calc(33.33% - 2rem);
+
+    &:first-of-type {
+      width: calc(66.66% - 2rem);
+    }
+  }
+
+  @media screen and (min-width: 90rem) {
+    width: calc(33.33% - 2rem);
+
+    &:first-of-type {
+      width: calc(66.66% - 2rem);
+    }
+  }
+}
+
+.category_pills {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      font-family: $font_face-utility;
+      font-size: $font_size-sml;
+      margin-top: 0.125rem;
+      margin-bottom: 0.125rem;
+      margin-left: 0;
+
+      &:not(:last-of-type) {
+        margin-right: 0.25rem;
+      }
+
+      a {
+        @extend %copy_link;
+        display: block;
+        padding: 0.25rem 1rem;
+        text-decoration: none;
+        border-radius: 500rem;
+        border: 0.0625rem solid var(--clrLinkBase);
+        color: var(--clrLinkBase);
+
+        &:hover {
+          border: 0.0625rem solid rgba(0, 0, 0, 0);
+          background: var(--clr_brand-gradient);
+          color: var(--clr_weiss);
+        }
+      }
+    }
+  }
+}

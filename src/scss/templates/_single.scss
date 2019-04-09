@@ -1,0 +1,260 @@
+body {
+  background: var(--clrBackgroundPage);
+}
+
+.page_header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @extend %central_column;
+  @extend %content_column;
+  margin: 0 auto;
+}
+
+.post_content {
+  background: var(--clrBackgroundArticle);
+  color: var(--clrFontArticle);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  @extend %central_column;
+  @extend %card;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    padding-bottom: ($line_height / 2);
+    @extend %content_column;
+    font-family: $font_face-accent;
+    font-weight: $font_weight-normal;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-top: $line_height;
+  }
+
+  h2 {
+    font-size: $font_size-xxl;
+  }
+
+  h3 {
+    font-size: $font_size-xlg;
+  }
+
+  h4 {
+    font-size: $font_size-lrg;
+  }
+
+  h5 {
+    font-size: $font_size-med;
+  }
+
+  h6 {
+    font-size: $font_size-med;
+  }
+
+  p {
+    @extend %body_copy;
+    line-height: $line_height;
+    padding-top: 0;
+    padding-bottom: $line_height;
+    @extend %content_column;
+
+    &:first-of-type {
+      font-size: $font_size-med;
+    }
+
+    &.has-small-font-size {
+      font-size: $font_size-sml;
+    }
+
+    &.has-normal-font-size {
+      font-size: $font_size-std;
+    }
+
+    &.has-large-font-size {
+      font-size: $font_size-med;
+    }
+
+    &.has-huge-font-size {
+      font-size: $font_size-lrg;
+    }
+
+    &.has-background {
+      background-image: var(--clr_brand-gradient);
+      background-size: auto;
+      background-position: center center;
+      background-attachment: fixed;
+      color: white;
+      padding: 1rem;
+      margin: 1rem 4rem;
+    }
+
+    &.has-primary-color {
+      @extend %copy_embellished;
+    }
+  }
+
+  ul,
+  ol {
+    @extend %content_column;
+    list-style-type: none;
+    padding-bottom: $line_height;
+
+    li {
+      @extend %body_copy;
+      position: relative;
+
+      &:not(:last-of-type) {
+        padding-bottom: ($line_height);
+      }
+
+      &:before {
+        @extend %copy_embellished;
+        position: absolute;
+        left: -1.5rem;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: section;
+
+    li {
+
+      &:before {
+        counter-increment: section;
+        content: ""counter(section) ".";
+        font-weight: $font_weight-black;
+      }
+    }
+  }
+
+  ul {
+
+    li {
+
+      &:before {
+        content: "●";
+      }
+    }
+  }
+
+  a {
+    @extend %copy_link;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  figure {
+    max-width: 100%;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: $line_height;
+    margin-left: auto;
+
+
+    figcaption {
+      display: block;
+      width: 100%;
+      @extend %content_column;
+      padding-top: $line_height;
+      padding-bottom: $line_height;
+      font-family: $font_face-main;
+      font-size: $font_size-sml;
+      color: var(--clrFontAlternate);
+    }
+  }
+
+  blockquote {
+    position: relative;
+    display: block;
+    width: calc(100% - 1rem);
+    max-width: 40rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @extend %content_column;
+    margin: $line_height 1rem;
+    @extend %copy_embellished;
+    font-family: $font_face-accent;
+    font-size: $font_size-lrg;
+    font-weight: $font_weight-black;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: calc(50% - 10rem);
+      width: 20rem;
+      height: 0.125rem;
+    }
+
+    &:before {
+      top: 0;
+      background: var(--clr_raja);
+    }
+
+    &:after {
+      bottom: 0;
+      background: var(--clr_alaska);
+    }
+
+    p {
+      @extend %copy_embellished;
+      display: inline;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    cite {
+      display: block;
+      font-size: $font_size-sml;
+      margin-top: 2em;
+      text-align: right;
+
+      a {
+        @extend %copy_link;
+      }
+    }
+  }
+
+  pre,
+  code {
+    background: #2d354c30;
+    font-family: $font_face-code;
+    color: var(--clrFontAlternate);
+  }
+
+  pre {
+    margin: 0 2rem $line_height 2rem;
+    overflow: auto;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+
+    >code {
+      padding: 0;
+      background: none;
+    }
+  }
+
+  code {
+    display: inline-block;
+    padding: 0.125em;
+    border-radius: 0.125rem;
+    font-size: inherit;
+  }
+
+  p code {
+    background: #2d354c10;
+  }
+}

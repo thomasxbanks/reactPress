@@ -1,0 +1,46 @@
+%body_copy {
+  font-family: $font_face-main;
+  font-size: $font_size-std;
+  max-width: 70ch;
+}
+
+%copy_link {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--clrLinkBase);
+  text-decoration: underline;
+  transition: color ease 300ms;
+
+  &:hover {
+    color: var(--clrLinkHover);
+  }
+}
+
+%copy_embellished {
+  background-image: var(--clr_brand-gradient);
+  background-position: bottom center;
+  background-attachment: fixed;
+  color: transparent;
+  background-clip: text;
+}
+
+%page_header {
+  display: block;
+  position: relative;
+  padding-bottom: ($line_height / 2);
+  font-family: $font_face-accent;
+  font-size: $font_size-xxl;
+  font-weight: $font_weight-normal;
+
+  &:before {
+    content: "";
+    width: calc(50% + 6rem);
+    height: 0.125rem;
+    transform: translateX(-6rem);
+    position: absolute;
+    bottom: ($line_height / 4);
+    left: 0;
+    background: var(--clr_brand-gradient);
+  }
+}

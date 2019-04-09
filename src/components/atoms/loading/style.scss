@@ -1,0 +1,46 @@
+@import '../../../scss/_config/all';
+
+@keyframes morph {
+
+  0% {
+    background: var(--clr_raja);
+    border-radius: 50%;
+  }
+
+  25% {
+    background: var(--clr_tatiana);
+  }
+
+  50% {
+    border-radius: 25%;
+  }
+
+  75% {
+    background: var(--clr_alaska);
+  }
+
+  100% {
+    transform: rotate(359deg);
+    background: var(--clr_raja);
+    border-radius: 50%;
+  }
+
+}
+
+.loading {
+  display: block;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    background: var(--clr_raja);
+    border-radius: 50%;
+    animation-name: morph;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
